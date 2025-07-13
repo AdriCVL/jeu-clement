@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Surprise pour Clément</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fce4ec;
+      text-align: center;
+      padding-top: 100px;
+    }
+    #game {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    #question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    #message {
+      font-size: 28px;
+      color: green;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <div id="question">Indice : Je suis tout petit, je n’ai pas encore de nom, mais j’ai déjà une place dans ton cœur. Qui suis-je ?</div>
+    <input type="text" id="answer" placeholder="Ta réponse ici..." />
+    <br>
+    <button onclick="checkAnswer()">Valider</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answer').value.toLowerCase();
+      const message = document.getElementById('message');
+      if (userAnswer.includes("bébé") || userAnswer.includes("neveu") || userAnswer.includes("nièce") || userAnswer.includes("futur bébé")) {
+        message.innerHTML = "🎉 Félicitations Clément ! Tu vas être TONTON ! 👶❤️";
+      } else {
+        message.innerHTML = "Hmm… Essaie encore 😉";
+      }
+    }
+  </script>
+</body>
+</html>
